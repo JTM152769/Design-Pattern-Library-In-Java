@@ -17,6 +17,7 @@ access to it.
 * Make Sure that there is only one instance : restrict construction - make constructor private and let class manage its instance.
 * Provide a global point of access : a static method to get the sole instance. 
 
+## Example
 ```java
 package com.amitsa.patterns;
 
