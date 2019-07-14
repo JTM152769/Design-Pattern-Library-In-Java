@@ -13,6 +13,10 @@ tags:
 Ensure a class only has one instance, and provide a global point of
 access to it.
 
+## Implementation
+* Make Sure that there is only one instance : restrict construction - make constructor private and let class manage its instance.
+* Provide a global point of access : a static method to get the sole instance. 
+
 
 ## Explanation
 Real world example
