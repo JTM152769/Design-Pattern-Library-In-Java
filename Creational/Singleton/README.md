@@ -17,6 +17,41 @@ access to it.
 * Make Sure that there is only one instance : restrict construction - make constructor private and let class manage its instance.
 * Provide a global point of access : a static method to get the sole instance. 
 
+```java
+package com.amitsa.patterns;
+
+public class SingletonPattern {
+
+    private static SingletonPattern _instance = new SingletonPattern();
+
+    private SingletonPattern() {
+        System.out.println("Creating .......");
+    }
+
+    public static SingletonPattern getInstance() {
+        return _instance;
+    }
+}
+
+class TestClient{
+    public static void main(String[] args){
+        SingletonPattern s1=SingletonPattern.getInstance();
+        SingletonPattern s2=SingletonPattern.getInstance();
+
+        print("s1",s1);
+        print("s2",s2);
+    }
+    static void print(String name, SingletonPattern object) {
+        System.out.println(String.format("object : %s, Hashcode : %d", name , object.hashCode()));
+        }
+}
+```
+Output:
+>Creating .......
+object : s1, Hashcode : 1956725890
+object : s2, Hashcode : 1956725890
+
+Process finished with exit code 0
 
 ## Explanation
 Real world example
