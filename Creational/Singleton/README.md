@@ -8,10 +8,19 @@ tags:
  - Gang Of Four
  - Difficulty-Beginner
 ---
+## Motivating Example
+* Some classes should have only one instance
+* Commonly, singletons should only be created when they are first needed(e.g.lazy Construction)
+
+### Examples
+* Access to computer's filesystem
+* Access to a network's printer spooler
+* Access to operating system's windowmanager
 
 ## Intent
-Ensure a class only has one instance, and provide a global point of
-access to it.
+* Ensure a class only has one instance, and provide a global point of access to it.
+* Make the class itself responsible for keeping track of its sole instance.
+* "There can be only one" 
 
 ## Implementation
 * Make Sure that there is only one instance : restrict construction - make constructor private and let class manage its instance.
@@ -91,6 +100,8 @@ assertEquals(enumIvoryTower1, enumIvoryTower2); // true
 Use the Singleton pattern when
 
 * there must be exactly one instance of a class, and it must be accessible to clients from a well-known access point
+* The class should not require parameters as part of its construction.
+* when creating the instance is expensive, a Singleton can improve performance.
 * when the sole instance should be extensible by subclassing, and clients should be able to use an extended instance without modifying their code
 
 ## Typical Use Case
