@@ -24,7 +24,20 @@ tags:
 
 ## Implementation
 * Make Sure that there is only one instance : restrict construction - make constructor private and let class manage its instance.
-* Provide a global point of access : a static method to get the sole instance. 
+* Provide a global point of access : a static method to get the sole instance.
+
+### Implementation Example
+* Logging to a common file
+  * Using separate instance classes
+  * Using a Singleton for performance reason
+  * Introducing locking
+  * Introducing double-check locking
+  * Introducing lazy instantiation via statics
+  
+* Execution Modes
+  * Single-threaded
+  * Multi-threaded
+
 
 ## Example
 ```java
