@@ -104,6 +104,22 @@ Use the Singleton pattern when
 * when creating the instance is expensive, a Singleton can improve performance.
 * when the sole instance should be extensible by subclassing, and clients should be able to use an extended instance without modifying their code
 
+## Collaboration
+* Classes that need to interact directly with a singleton must refer to its instance property(or method)
+* Alternately, classes can depend on an interface or parameter of the singleton's type
+
+## Consequences
+* The default implementation of the singleton pattern is not thread safe and should not be used in multi-threaded environments, including web servers.
+* Singletons introduce tight coupling among collaborating classes
+* Singletons are notoriously difficult to test
+   * Commonly regarded as an anti-pattern
+* Using an IOC Container it is straightforward to avoid the coupling and testability issues
+
+## Single Responsibility Principle
+* Management of object lifetime is a separate responsibility
+* Adding this responsibility to a class with other responsibilities violates the Single Responsibility Principle(SRP)
+* Using an IOC Container, a separate class can be responsible for managing object lifetimes.
+
 ## Typical Use Case
 
 * the logging class
@@ -128,3 +144,9 @@ Use the Singleton pattern when
 
 * [Design Patterns: Elements of Reusable Object-Oriented Software](http://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612)
 * [Effective Java (2nd Edition)](http://www.amazon.com/Effective-Java-Edition-Joshua-Bloch/dp/0321356683)
+
+## Summary
+* The Singleton Pattern is one of the simplest design patterns 
+* It is used to ensure that only excatly one instance of a class exists within a program
+* Though simple, it is easy to get wrong, and can result in a more brittle and less testable design
+* Object lifetime management is usually better handled by a container with this responsibility
