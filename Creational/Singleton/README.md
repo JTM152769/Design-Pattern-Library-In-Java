@@ -1,13 +1,3 @@
----
-layout: pattern
-title: Singleton
-folder: singleton
-categories: Creational
-tags:
- - Java
- - Gang Of Four
- - Difficulty-Beginner
----
 ## Motivating Example
 * Some classes should have only one instance
 * Commonly, singletons should only be created when they are first needed(e.g.lazy Construction)
